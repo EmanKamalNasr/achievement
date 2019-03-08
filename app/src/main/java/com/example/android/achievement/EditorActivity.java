@@ -1,16 +1,25 @@
 package com.example.android.achievement;
 
+import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
+import java.util.Calendar;
+
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,6 +30,7 @@ public class EditorActivity extends AppCompatActivity implements View.OnClickLis
     public static final String EXTRA_TYPE = "type";
     public static final String EXTRA_DATE = "date";
 
+    private DatePickerDialog.OnDateSetListener mDateSetListener;
     private EditText title_et, details_et, date_et;
     private RadioGroup radioGroup_type;
     private RadioButton radioButton_sec;
@@ -45,6 +55,7 @@ public class EditorActivity extends AppCompatActivity implements View.OnClickLis
         details_et = findViewById(R.id.details_et);
         details_et.setOnTouchListener(mTouchListener);
         date_et = findViewById(R.id.date_et);
+        date_et.setOnClickListener(this);
         date_et.setOnTouchListener(mTouchListener);
         add_btn = findViewById(R.id.add_btn);
         add_btn.setOnClickListener(this);
@@ -55,6 +66,14 @@ public class EditorActivity extends AppCompatActivity implements View.OnClickLis
                 achievementHasChanged = true;
             }
         });
+
+        mDateSetListener=new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                String date=day+"/"+(month+1)+"/"+year;
+                date_et.setText(date);
+            }
+        };
 
         Intent intent = getIntent();
         if (intent.hasExtra(EXTRA_ID)) {
@@ -83,6 +102,22 @@ public class EditorActivity extends AppCompatActivity implements View.OnClickLis
         if (view == add_btn) {
             saveAchievement();
         }
+        if(view==date_et){
+            showDatePicker();
+        }
+    }
+
+
+    private void showDatePicker() {
+        Calendar calendar=Calendar.getInstance();
+        int year=calendar.get(Calendar.YEAR);
+        int month=calendar.get(Calendar.MONTH);
+        int day=calendar.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog=new DatePickerDialog(this,
+                mDateSetListener,
+                year,month,day);
+        datePickerDialog.show();
     }
 
     private void saveAchievement() {
