@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">انجازاتى</string>
+    <string name="dbname">achievement_db</string>
+    <string name="quote">حتى اصغر الخطوات هى سير فى الاتجاه الصحيح ,فلا تستصغر إنجازاتك!</string>
+    <string name="hint_title">اسم الإنجاز الخاص بك </string>
+    <string name="hint_details">تفاصيل الإنجاز...</string>
+    <string name="hint_type">نوع الإنجاز</string>
+    <string name="rb_sec1">دينى</string>
+    <string name="rb_sec2">تعليمى</string>
+    <string name="rb_sec3">إجتماعى</string>
+    <string name="rb_sec4">رياضى</string>
+    <string name="hint_date">تاريخ الإنجاز</string>
+    <string name="add_achievement"> إضافه إنجاز جديد</string>
+    <string name="edit_achievement">تحديث الإنجاز</string>
+    <string name="save_icon">حفظ</string>
+    <string name="delete">حذف</string>
+    <string name="deleteAll">حذف الكل</string>
+    <string name="date_empty">من فضلك اضف تاريخ للانجاز الخاص بك!</string>
+    <string name="details_empty">من فضلك ارصد التفاصيل لكى تتزكرها دوما!</string>
+    <string name="title_empty">اختر اسما لانجازك!</string>
+    <string name="cancel">إلغاء</string>
+    <string name="ok">نعم</string>
+    <string name="deleteall_dialog_msg">هل انت متأكد من انك تريد حذف جميع الإنجازات؟!</string>
+    <string name="delete_dialog_msg"> هل انت متأكد من انك تريد حذف ذلك الإنجاز ؟!</string>
+    <string name="empty_view_txt">ابدأ الان بإضافه انجازاتك لتتذكرها دوما !!</string>
+    <string name="unsaved_changes">هل تريد الذهاب بدون حفظ تلك التعديلات ؟!</string>
+    <string name="keep_editing">البقاء</string>
+    <string name="discard">الذهاب</string>
+</resources>
