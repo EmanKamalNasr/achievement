@@ -3,7 +3,7 @@ it's an app to store your daily achievements [Room Persistence Library]
 
 # Note
 * compileSdkVersion,targetSdkVersion 28
-* minSdkVersion 21 
+* minSdkVersion 24
 
 # Functionality 
 Inserting,Updating,Deleting fields using Room Persistence Library.
